@@ -1,4 +1,5 @@
 function FullReset () {
+    basic.clearScreen()
     BalloonLevel = 0
     Pot = 0
     round = 1
@@ -173,6 +174,13 @@ function showBallonLevelLED () {
         music.play(music.tonePlayable(440, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     }
 }
+function HappyEnd () {
+    Pause = true
+    music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
+    basic.showString("Score")
+    basic.showNumber(Pot)
+    FullReset()
+}
 input.onButtonPressed(Button.B, function () {
     if (Pause == false) {
         basic.clearScreen()
@@ -199,13 +207,10 @@ basic.forever(function () {
         basic.pause(1000)
         RoundEnd()
     }
-})
-basic.forever(function () {
     if (round > 10) {
-        Pause = true
-        music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
-        basic.showString("Score")
-        basic.showNumber(Pot)
-        FullReset()
+        HappyEnd()
+    }
+    if (input.logoIsPressed()) {
+        HappyEnd()
     }
 })
