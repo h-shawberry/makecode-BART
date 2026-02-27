@@ -7,26 +7,10 @@ function FullReset () {
     Pause = false
 }
 function Instructions () {
-    BalloonLevel = 1
-    showBallonLevelLED()
-    BalloonLevel = 2
-    showBallonLevelLED()
-    BalloonLevel = 3
-    showBallonLevelLED()
-    BalloonLevel = 4
-    showBallonLevelLED()
-    BalloonLevel = 5
-    showBallonLevelLED()
-    BalloonLevel = 6
-    showBallonLevelLED()
-    BalloonLevel = 7
-    showBallonLevelLED()
-    BalloonLevel = 8
-    showBallonLevelLED()
-    BalloonLevel = 9
-    showBallonLevelLED()
-    BalloonLevel = 10
-    showBallonLevelLED()
+    for (let index = 0; index < 10; index++) {
+        BalloonLevel += 1
+        showBallonLevelLED()
+    }
     basic.showIcon(IconNames.Chessboard)
     basic.pause(1000)
     basic.showLeds(`
