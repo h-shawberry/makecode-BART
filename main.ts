@@ -175,12 +175,11 @@ input.onButtonPressed(Button.B, function () {
         RoundEnd()
     }
 })
+let Pause = false
 let PopLevel = 0
 let round = 0
 let Pot = 0
 let BalloonLevel = 0
-let Pause = false
-Pause = true
 Instructions()
 FullReset()
 basic.forever(function () {
