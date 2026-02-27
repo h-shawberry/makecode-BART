@@ -72,8 +72,7 @@ function showBallonLevelLED () {
             . . . . .
             . . . . .
             `)
-    }
-    if (BalloonLevel == 1) {
+    } else if (BalloonLevel == 1) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -82,8 +81,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 2) {
+    } else if (BalloonLevel == 2) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -92,8 +90,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(277, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 3) {
+    } else if (BalloonLevel == 3) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -102,8 +99,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(294, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 4) {
+    } else if (BalloonLevel == 4) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -112,8 +108,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(311, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 5) {
+    } else if (BalloonLevel == 5) {
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -122,8 +117,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(330, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 6) {
+    } else if (BalloonLevel == 6) {
         basic.showLeds(`
             . . . . .
             . . # . .
@@ -132,8 +126,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(349, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 7) {
+    } else if (BalloonLevel == 7) {
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -142,8 +135,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(370, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 8) {
+    } else if (BalloonLevel == 8) {
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -152,8 +144,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(392, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 9) {
+    } else if (BalloonLevel == 9) {
         basic.showLeds(`
             . # # # .
             . # # # .
@@ -162,8 +153,7 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(415, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-    }
-    if (BalloonLevel == 10) {
+    } else if (BalloonLevel == 10) {
         basic.showLeds(`
             . # # # .
             # # # # #
@@ -172,6 +162,14 @@ function showBallonLevelLED () {
             . . # . .
             `)
         music.play(music.tonePlayable(440, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     }
 }
 function HappyEnd () {
