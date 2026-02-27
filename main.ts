@@ -173,6 +173,7 @@ function showBallonLevelLED () {
     }
 }
 function HappyEnd () {
+    basic.clearScreen()
     Pause = true
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
     basic.showString("Score")
