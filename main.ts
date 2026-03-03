@@ -160,7 +160,6 @@ function showBallonLevelLED () {
     }
 }
 function HappyEnd () {
-    let Participant = 0
     basic.clearScreen()
     Pause = true
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
@@ -170,7 +169,8 @@ function HappyEnd () {
     datalogger.createCV("nPops", nPops),
     datalogger.createCV("nPumps", nPumps),
     datalogger.createCV("nRounds", round),
-    datalogger.createCV("Pot", Pot)
+    datalogger.createCV("Pot", Pot),
+    datalogger.createCV("AdjustednPumps", Pot / (round - nPops))
     )
     FullReset()
 }
@@ -192,13 +192,15 @@ let nPumps = 0
 let round = 0
 let Pot = 0
 let BalloonLevel = 0
+music.setVolume(5)
 Instructions()
 FullReset()
 datalogger.setColumnTitles(
 "nPumps",
 "nPops",
 "Pot",
-"nRounds"
+"nRounds",
+"AdjustednPumps"
 )
 basic.forever(function () {
     if (BalloonLevel >= PopLevel) {
