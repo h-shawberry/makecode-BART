@@ -3,6 +3,8 @@ function FullReset () {
     BalloonLevel = 0
     Pot = 0
     round = 1
+    nPumps = 0
+    nPops = 0
     PopLevel = randint(2, 11)
     Pause = false
 }
@@ -163,6 +165,12 @@ function HappyEnd () {
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
     basic.showString("Money")
     basic.showNumber(Pot)
+    datalogger.log(
+    datalogger.createCV("nPops", nPops),
+    datalogger.createCV("nPumps", nPumps),
+    datalogger.createCV("nRounds", round),
+    datalogger.createCV("Pot", Pot)
+    )
     FullReset()
 }
 input.onButtonPressed(Button.B, function () {
@@ -178,6 +186,8 @@ input.onButtonPressed(Button.B, function () {
 })
 let Pause = false
 let PopLevel = 0
+let nPops = 0
+let nPumps = 0
 let round = 0
 let Pot = 0
 let BalloonLevel = 0
@@ -189,8 +199,6 @@ datalogger.setColumnTitles(
 "Pot",
 "nRounds"
 )
-let nPumps = 0
-let nPops = 0
 basic.forever(function () {
     if (BalloonLevel >= PopLevel) {
         Pause = true
