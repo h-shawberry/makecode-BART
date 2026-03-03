@@ -210,7 +210,7 @@ basic.forever(function () {
         basic.pause(1000)
         RoundEnd()
     }
-    if (round > 10) {
+    if (round > 15) {
         round += -1
         HappyEnd()
     }
