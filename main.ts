@@ -210,7 +210,7 @@ basic.forever(function () {
     if (round > 10) {
         HappyEnd()
     }
-    if (input.logoIsPressed()) {
+    if (input.buttonIsPressed(Button.AB)) {
         HappyEnd()
     }
 })
