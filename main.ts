@@ -37,6 +37,7 @@ function Instructions () {
 input.onButtonPressed(Button.A, function () {
     if (Pause == false) {
         BalloonLevel += 1
+        nPumps += 1
         showBallonLevelLED()
     }
 })
@@ -182,10 +183,18 @@ let Pot = 0
 let BalloonLevel = 0
 Instructions()
 FullReset()
+datalogger.setColumnTitles(
+"nPumps",
+"nPops",
+"Pot"
+)
+let nPumps = 0
+let nPops = 0
 basic.forever(function () {
     if (BalloonLevel >= PopLevel) {
         Pause = true
         basic.showIcon(IconNames.Chessboard)
+        nPops += 1
         basic.pause(1000)
         RoundEnd()
     }
