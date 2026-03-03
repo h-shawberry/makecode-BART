@@ -186,7 +186,8 @@ FullReset()
 datalogger.setColumnTitles(
 "nPumps",
 "nPops",
-"Pot"
+"Pot",
+"nRounds"
 )
 let nPumps = 0
 let nPops = 0
