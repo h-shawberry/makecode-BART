@@ -160,6 +160,7 @@ function showBallonLevelLED () {
     }
 }
 function HappyEnd () {
+    let Participant = 0
     basic.clearScreen()
     Pause = true
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
