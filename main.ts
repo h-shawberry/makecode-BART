@@ -208,6 +208,7 @@ basic.forever(function () {
         RoundEnd()
     }
     if (round > 10) {
+        round += -1
         HappyEnd()
     }
     if (input.buttonIsPressed(Button.AB)) {
