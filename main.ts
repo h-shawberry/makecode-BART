@@ -163,7 +163,7 @@ function HappyEnd () {
     basic.clearScreen()
     Pause = true
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
-    basic.showString("Money")
+    basic.showString("Points")
     basic.showNumber(Pot)
     datalogger.log(
     datalogger.createCV("nPops", nPops),
