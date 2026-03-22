@@ -192,7 +192,7 @@ let nPumps = 0
 let round = 0
 let Pot = 0
 let BalloonLevel = 0
-music.setVolume(5)
+music.setVolume(255)
 Instructions()
 FullReset()
 datalogger.setColumnTitles(
