@@ -38,6 +38,8 @@ function Instructions () {
 }
 input.onButtonPressed(Button.A, function () {
     if (Pause == false) {
+        isFlashing = false
+        lastActivity = input.runningTime()
         BalloonLevel += 1
         nPumps += 1
         showBallonLevelLED()
@@ -176,6 +178,8 @@ function HappyEnd () {
 }
 input.onButtonPressed(Button.B, function () {
     if (Pause == false) {
+        isFlashing = false
+        lastActivity = input.runningTime()
         basic.clearScreen()
         Pause = true
         music.play(music.createSoundExpression(WaveShape.Triangle, 1, 4213, 255, 255, 200, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
@@ -185,6 +189,7 @@ input.onButtonPressed(Button.B, function () {
         RoundEnd()
     }
 })
+let isFlashing = false
 let Pause = false
 let PopLevel = 0
 let nPops = 0
@@ -192,6 +197,8 @@ let nPumps = 0
 let round = 0
 let Pot = 0
 let BalloonLevel = 0
+let lastActivity = 0
+lastActivity = input.runningTime()
 music.setVolume(255)
 Instructions()
 FullReset()
@@ -215,11 +222,30 @@ basic.forever(function () {
         HappyEnd()
     }
     if (input.buttonIsPressed(Button.AB)) {
+        isFlashing = false
+        lastActivity = input.runningTime()
         BalloonLevel = 0
         Instructions()
         FullReset()
     }
     if (input.logoIsPressed()) {
+        isFlashing = false
+        lastActivity = input.runningTime()
         HappyEnd()
+    }
+    if (!(isFlashing) && Pause == false && input.runningTime() - lastActivity > 30000) {
+        isFlashing = true
+    }
+    if (isFlashing) {
+        basic.showLeds(`
+            . # # # .
+            # # # # #
+            # # # # #
+            . # # # .
+            . . # . .
+            `)
+        basic.pause(300)
+        basic.clearScreen()
+        basic.pause(300)
     }
 })
