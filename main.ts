@@ -215,6 +215,10 @@ basic.forever(function () {
         HappyEnd()
     }
     if (input.buttonIsPressed(Button.AB)) {
+        Instructions()
+        FullReset()
+    }
+    if (input.logoIsPressed()) {
         HappyEnd()
     }
 })
