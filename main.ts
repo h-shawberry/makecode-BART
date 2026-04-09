@@ -217,21 +217,14 @@ basic.forever(function () {
         basic.pause(1000)
         RoundEnd()
     }
-    if (round > 15) {
+    if (round > 5) {
         round += -1
         HappyEnd()
     }
     if (input.buttonIsPressed(Button.AB)) {
         isFlashing = false
         lastActivity = input.runningTime()
-        BalloonLevel = 0
-        Instructions()
-        FullReset()
-    }
-    if (input.logoIsPressed()) {
-        isFlashing = false
-        lastActivity = input.runningTime()
-        HappyEnd()
+        RoundEnd()
     }
     if (!(isFlashing) && Pause == false && input.runningTime() - lastActivity > 30000) {
         isFlashing = true
