@@ -215,6 +215,7 @@ basic.forever(function () {
         HappyEnd()
     }
     if (input.buttonIsPressed(Button.AB)) {
+        BalloonLevel = 0
         Instructions()
         FullReset()
     }
